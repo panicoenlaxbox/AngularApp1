@@ -2,9 +2,19 @@
 
 This monorepo contains an Angular application and an ASP.NET Core Web API project.
 
-## dotnet
+## Client
+
 ```powershell
-dotnet run --project .\Server\src\WebApplication1\WebApplication1.csproj --launch-profile "https"
+cd .\client\app1
+npm install
+npm start
+```
+
+## Server
+
+```powershell
+cd .\Server\src\WebApplication1
+dotnet run
 ```
 
 ## Build
