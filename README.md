@@ -47,3 +47,5 @@ editorconfig-checker
 ```
 
 > [editorconfig-checker](https://github.com/editorconfig-checker/editorconfig-checker) validates all files against `.editorconfig` rules. Install with `npm install -g editorconfig-checker`.
+
+VS Code: follow the [workspace recommendations](.vscode/extensions.json) to install the [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension. Visual Studio has built-in support.
