@@ -36,3 +36,14 @@ cd .\dist
 az login --tenant <YOUR_TENANT_ID>
 .\scripts\Publish.ps1
 ```
+
+## .editorconfig
+
+```powershell
+cd .\Server
+dotnet format
+cd ..
+editorconfig-checker
+```
+
+> [editorconfig-checker](https://github.com/editorconfig-checker/editorconfig-checker) validates all files against `.editorconfig` rules. Install with `npm install -g editorconfig-checker`.

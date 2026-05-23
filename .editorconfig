@@ -1,0 +1,25 @@
+root = true
+
+# All files
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{cs}]
+indent_size = 4
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_style_var_elsewhere = true:suggestion
+dotnet_style_namespace_match_folder = true:warning
+# Remove unnecessary using directives (IDE0005)
+# https://github.com/dotnet/roslyn/issues/41640
+dotnet_diagnostic.IDE0005.severity = warning
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009
+dotnet_diagnostic.IDE0003.severity = warning
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0011
+dotnet_diagnostic.IDE0011.severity = warning
+# https://learn.microsoft.com/sl-si/dotnet/fundamentals/code-analysis/style-rules/ide0001?pivots=lang-csharp-vb
+dotnet_diagnostic.IDE0001.severity = warning
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0002
+dotnet_diagnostic.IDE0002.severity = warning

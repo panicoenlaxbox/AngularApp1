@@ -9,16 +9,16 @@ import { Observable } from 'rxjs';
   selector: 'app-welcome',
   imports: [CommonModule],
   template: `
-   <ul>
-    @for (weatherForecast of weatherForecast$ | async; track $index) {
-      <li>{{weatherForecast | json}}</li>
-    }
-  </ul>
+    <ul>
+      @for (weatherForecast of weatherForecast$ | async; track $index) {
+        <li>{{weatherForecast | json}}</li>
+      }
+    </ul>
   `,
   styleUrl: './welcome.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Welcome implements OnInit {  
+export class Welcome implements OnInit {
   weatherForecast$: Observable<WeatherForecast[]> | undefined;
   weatherForecastService = inject(WeatherForecastService);
 
