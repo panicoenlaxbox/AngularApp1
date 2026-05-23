@@ -8,6 +8,29 @@ This monorepo contains an Angular application and an ASP.NET Core Web API projec
 
 **Production**: [`Build.ps1`](scripts/Build.ps1) compiles Angular and copies the output to `wwwroot/` inside the ASP.NET project. Both are served from the same domain, so no CORS is needed. `UseDefaultFiles` + `UseStaticFiles` serves the Angular app, and `MapFallbackToFile("/index.html")` ensures Angular's client-side routing works when navigating directly to a route or refreshing the page.
 
+## Setup
+
+After cloning, restore the .NET local tools and install the Git hooks:
+
+```powershell
+dotnet tool restore
+dotnet husky install
+```
+
+### .editorconfig
+
+```powershell
+cd .\Server
+dotnet format
+cd ..
+editorconfig-checker
+```
+
+> [editorconfig-checker](https://github.com/editorconfig-checker/editorconfig-checker) validates all files against `.editorconfig` rules. Install with `npm install -g editorconfig-checker`.
+
+VS Code: follow the [workspace recommendations](.vscode/extensions.json) to install the [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension. Visual Studio has built-in support.
+
+
 ## Client
 
 ```powershell
@@ -36,16 +59,3 @@ cd .\dist
 az login --tenant <YOUR_TENANT_ID>
 .\scripts\Publish.ps1
 ```
-
-## .editorconfig
-
-```powershell
-cd .\Server
-dotnet format
-cd ..
-editorconfig-checker
-```
-
-> [editorconfig-checker](https://github.com/editorconfig-checker/editorconfig-checker) validates all files against `.editorconfig` rules. Install with `npm install -g editorconfig-checker`.
-
-VS Code: follow the [workspace recommendations](.vscode/extensions.json) to install the [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension. Visual Studio has built-in support.
