@@ -1,14 +1,1 @@
-# Normaliza todo a LF en el repo
 * text=auto eol=lf
-
-# Los hooks de Husky son shell scripts, deben ser LF obligatoriamente
-.husky/pre-commit text eol=lf
-.husky/pre-push text eol=lf
-
-# Binarios: sin conversión de líneas
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.ico binary
-*.woff binary
-*.woff2 binary
