@@ -1,3 +1,5 @@
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
@@ -27,6 +29,7 @@ if (!app.Environment.IsDevelopment())
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
