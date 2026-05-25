@@ -1,2 +1,4 @@
 /dist
+/Server/coverage
+/Server/coveragereport
 **/settings.local.json

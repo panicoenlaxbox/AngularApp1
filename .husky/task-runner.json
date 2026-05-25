@@ -2,6 +2,10 @@
    "$schema": "https://alirezanet.github.io/Husky.Net/schema.json",
    "tasks": [
       {
+         "name": "editorconfig-checker",
+         "command": "editorconfig-checker"
+      },
+      {
          "name": "dotnet-format",
          "command": "dotnet",
          "args": [
