@@ -1,6 +1,6 @@
 # AngularApp1
 
-This monorepo contains an Angular application and an ASP.NET Core Web API project that is deployed to Azure App Service.
+This monorepo contains an Angular application and an ASP.NET Core Web API project.
 
 ## How it works
 
@@ -17,7 +17,24 @@ dotnet tool restore
 dotnet husky install
 ```
 
-### .editorconfig
+## Development
+
+### Client
+
+```powershell
+cd .\client\app1
+npm install
+npm start
+```
+
+### Server
+
+```powershell
+cd .\Server\src\WebApplication1
+dotnet run
+```
+
+### Linting
 
 ```powershell
 cd .\Server
@@ -30,23 +47,19 @@ editorconfig-checker
 
 VS Code: follow the [workspace recommendations](.vscode/extensions.json) to install the [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) extension. Visual Studio has built-in support.
 
-
-## Client
-
+### Coverage
 ```powershell
-cd .\client\app1
-npm install
-npm start
+.\scripts\Server-Coverage.ps1
 ```
 
-## Server
-
+Optionally filter by project name:
 ```powershell
-cd .\Server\src\WebApplication1
-dotnet run
+.\scripts\Server-Coverage.ps1 -Filter MyProject
 ```
 
-## Build
+## Deployment
+
+### Build
 To test the production build locally before publishing:
 
 ```powershell
@@ -61,26 +74,16 @@ Alternatively, run it in Docker:
 .\scripts\Run-Docker.ps1
 ```
 
-## Publish to App Service
+### Publish to App Service
 ```powershell
 az login --tenant <YOUR_TENANT_ID>
 .\scripts\Publish-AppService.ps1
 ```
 
-## Publish to Container Apps
+### Publish to Container Apps
 ```powershell
 az login --tenant <YOUR_TENANT_ID>
 .\scripts\Publish-ContainerApp.ps1 -Suffix <YOUR_UNIQUE_SUFFIX>
 ```
 
 `-Suffix` is required because Azure Container Registry names must be globally unique. Choose any short alphanumeric string (e.g. `-Suffix x7k2p` → `crwebapplication1x7k2p`).
-
-## Coverage
-```powershell
-.\scripts\Server-Coverage.ps1
-```
-
-Optionally filter by project name:
-```powershell
-.\scripts\Server-Coverage.ps1 -Filter MyProject
-```
