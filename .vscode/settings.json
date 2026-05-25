@@ -1,5 +1,6 @@
 {
     "json.schemaDownload.trustedDomains": {
         "https://alirezanet.github.io/": true
-    }
+    },
+    "dotnet.unitTests.runSettingsPath": "Server/.runsettings"
 }

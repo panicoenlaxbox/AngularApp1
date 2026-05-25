@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 
 namespace TestProject1;
 
-public class WeatherForecastShould(WebApplicationFactory<Program> factory) : IClassFixture<WebApplicationFactory<Program>>
+public class WeatherForecastShould(WebApplicationFactory<Program> factory, ITestOutputHelper output) : IClassFixture<WebApplicationFactory<Program>>
 {
     [Fact]
     public async Task Test1()
@@ -14,6 +14,8 @@ public class WeatherForecastShould(WebApplicationFactory<Program> factory) : ICl
         using var response = await client.GetAsync("api/weatherforecast", TestContext.Current.CancellationToken);
 
         response.EnsureSuccessStatusCode();
-        (await response.Content.ReadFromJsonAsync<IEnumerable<WeatherForecast>>(cancellationToken: TestContext.Current.CancellationToken)).ShouldNotBeEmpty();
+        var data = (await response.Content.ReadFromJsonAsync<IEnumerable<WeatherForecast>>(cancellationToken: TestContext.Current.CancellationToken))!;
+        output.WriteLine(string.Join(Environment.NewLine, data.Select(d => d)));
+        data.ShouldNotBeEmpty();
     }
 }
