@@ -60,6 +60,14 @@ az login --tenant <YOUR_TENANT_ID>
 .\scripts\Publish-AppService.ps1
 ```
 
+## Publish to Container Apps
+```powershell
+az login --tenant <YOUR_TENANT_ID>
+.\scripts\Publish-ContainerApp.ps1 -Suffix <YOUR_UNIQUE_SUFFIX>
+```
+
+`-Suffix` is required because Azure Container Registry names must be globally unique. Choose any short alphanumeric string (e.g. `-Suffix x7k2p` → `crwebapplication1x7k2p`).
+
 ## Coverage
 ```powershell
 .\scripts\Server-Coverage.ps1
