@@ -54,8 +54,18 @@ cd .\dist
 .\WebApplication1.exe
 ```
 
-## Publish
+## Publish to App Service
 ```powershell
 az login --tenant <YOUR_TENANT_ID>
-.\scripts\Publish.ps1
+.\scripts\Publish-AppService.ps1
+```
+
+## Coverage
+```powershell
+.\scripts\Server-Coverage.ps1
+```
+
+Optionally filter by project name:
+```powershell
+.\scripts\Server-Coverage.ps1 -Filter MyProject
 ```
