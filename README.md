@@ -48,10 +48,17 @@ dotnet run
 
 ## Build
 To test the production build locally before publishing:
+
 ```powershell
 .\scripts\Build.ps1
 cd .\dist
 .\WebApplication1.exe
+```
+
+Alternatively, run it in Docker:
+
+```powershell
+.\scripts\Run-Docker.ps1
 ```
 
 ## Publish to App Service
