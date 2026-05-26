@@ -17,6 +17,29 @@ dotnet tool restore
 dotnet husky install
 ```
 
+### Claude Code LSP plugins
+
+The project uses Claude Code's `csharp-lsp` and `typescript-lsp` plugins for code intelligence. Install the required binaries once after cloning:
+
+**C# LSP** (all platforms):
+```powershell
+dotnet tool install --global csharp-ls
+```
+
+**TypeScript LSP** (Windows only):
+
+```powershell
+.\tools\Setup-TypescriptLsp.ps1
+```
+
+On Windows, npm installs `typescript-language-server` as a `.cmd` file that Claude Code cannot invoke directly. The script compiles a small `.exe` shim and places it in the npm global bin. Restart Claude Code afterwards.
+
+On macOS/Linux the npm binary works natively — just install the package:
+
+```bash
+npm install -g typescript-language-server typescript
+```
+
 ## Development
 
 ### Client
