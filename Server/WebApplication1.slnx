@@ -1,4 +1,8 @@
 <Solution>
-  <Project Path="src/WebApplication1/WebApplication1.csproj" />
-  <Project Path="tests/TestProject1/TestProject1.csproj" Id="521d2a64-3991-4b72-af3a-c1e0d3e5427c" />
+  <Folder Name="/src/">
+    <Project Path="src/WebApplication1/WebApplication1.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TestProject1/TestProject1.csproj" />
+  </Folder>
 </Solution>
