@@ -1,0 +1,8 @@
+[*Should.cs]
+dotnet_naming_symbols.test_methods.applicable_kinds = method
+dotnet_naming_symbols.test_methods.applicable_accessibilities = public
+dotnet_naming_style.snake_case.capitalization = all_lower
+dotnet_naming_style.snake_case.word_separator = _
+dotnet_naming_rule.test_methods_must_be_snake_case.symbols = test_methods
+dotnet_naming_rule.test_methods_must_be_snake_case.style = snake_case
+dotnet_naming_rule.test_methods_must_be_snake_case.severity = warning

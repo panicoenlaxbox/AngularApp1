@@ -26,3 +26,5 @@ dotnet_diagnostic.IDE0011.severity = warning
 dotnet_diagnostic.IDE0001.severity = warning
 # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0002
 dotnet_diagnostic.IDE0002.severity = warning
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0022
+csharp_style_expression_bodied_methods = true:warning

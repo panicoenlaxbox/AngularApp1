@@ -7,7 +7,7 @@ namespace TestProject1;
 public class WeatherForecastShould(WebApplicationFactory<Program> factory, ITestOutputHelper output) : IClassFixture<WebApplicationFactory<Program>>
 {
     [Fact]
-    public async Task Test1()
+    public async Task return_weather_forecast()
     {
         var client = factory.CreateClient();
 
